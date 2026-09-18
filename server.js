@@ -1,10 +1,12 @@
-// express web server
 const express = require('express');
 const app = express();
+const lesson1Controller = require('./controllers/lesson1');
 
-app.get('/', (req, res) => {
-  res.send('<b style="color:royalblue;">Matthew Knorr!</b>');
-});
+
+app.get('/', lesson1Controller.routeOne);
+
+app.get('/routeTwo', lesson1Controller.routeTwo);
+
 
 const port = 3000;
 app.listen(port, () => {
